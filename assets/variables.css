@@ -1,0 +1,103 @@
+/* variables.css — GENERATED PER PROJECT */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Great+Vibes&display=swap');
+
+@font-face {
+  font-family: 'Brittany';
+  src: local('Brittany Signature'), local('Brittany'), url('../assets/fonts/BrittanySignature.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ===== BASE COLORS ===== */
+  --color-bg: #F3EBDD;              /* Paper / Background */
+  --color-bg-alt: #E8DDCB;          /* Light Paper */
+  --color-primary: #29251F;         /* Ink / Primary Text */
+  --color-accent: #D99A16;          /* Marigold */
+
+  /* ===== EXTENDED INDIAN WEDDING PALETTE ===== */
+  --color-warm-brown: #69503A;      /* Warm Brown */
+  --color-marigold: #D99A16;        /* Marigold */
+  --color-marigold-deep: #B9780C;   /* Deep Marigold */
+  --color-wedding-red: #B73527;     /* Wedding Red */
+  --color-terracotta: #C85A3A;      /* Terracotta */
+  --color-leaf-green: #3F6336;      /* Leaf Green */
+  --color-leaf-deep: #29482D;       /* Deep Leaf */
+  --color-muted-sage: #71805A;      /* Muted Sage */
+  --color-gold-line: #B88A32;       /* Gold Line */
+
+  /* ===== DERIVED ROLES ===== */
+  --color-text: #29251F;            /* Ink */
+  --color-text-muted: rgba(41, 37, 31, 0.7); /* Muted Ink at 70% opacity */
+  --color-accent-dark: #B9780C;     /* Deep Marigold */
+  --color-overlay: rgba(41, 37, 31, 0.45);   /* Text overlay neutral */
+  --color-white: #FFFFFF;
+
+  /* ===== TEXTURES & ASSET TOKENS ===== */
+  --bg-texture-paper: url('../assets/images/paper texture bg.webp');
+
+  /* ===== FONTS ===== */
+  --font-script: 'Brittany', 'Great Vibes', cursive;
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-body: 'Cormorant Garamond', Georgia, serif;
+
+  /* ===== FONT SIZES (fluid, clamp-based scale) ===== */
+  --fs-script-hero: clamp(3.5rem, 9vw, 7rem);
+  --fs-script-sm: clamp(2rem, 5vw, 3rem);
+  --fs-h1: clamp(2.2rem, 5vw, 3.5rem);
+  --fs-h2: clamp(1.6rem, 3.5vw, 2.4rem);
+  --fs-h3: clamp(1.2rem, 2.5vw, 1.6rem);
+  --fs-body: clamp(1.05rem, 1.6vw, 1.25rem);
+  --fs-small: 15px;
+  --fs-label: 14px;
+
+  /* ===== FONT WEIGHTS ===== */
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* ===== LETTER SPACING ===== */
+  --ls-tight: 0.5px;
+  --ls-normal: 1px;
+  --ls-wide: 2.5px;
+
+  /* ===== SPACING SCALE ===== */
+  --space-xxs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+  --space-3xl: 9rem;
+
+  /* ===== SECTION PADDING ===== */
+  --section-padding-y: clamp(3rem, 8vw, 6rem);
+  --section-padding-x: clamp(1.25rem, 6vw, 4rem);
+
+  /* ===== LAYOUT ===== */
+  --max-width-content: 760px;
+  --max-width-wide: 1140px;
+
+  /* ===== BORDERS / RADIUS ===== */
+  --radius-sm: 4px;
+  --radius-md: 12px;
+  --radius-full: 999px;
+  --border-thin: 1px solid var(--color-gold-line);
+
+  /* ===== SHADOWS ===== */
+  --shadow-soft: 0 8px 30px rgba(41, 37, 31, 0.12);
+
+  /* ===== TRANSITIONS ===== */
+  --transition-fast: 0.25s ease;
+  --transition-medium: 0.5s ease;
+  --transition-slow: 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* ===== Z-INDEX SCALE ===== */
+  --z-loader: 100;
+  --z-nav: 50;
+  --z-overlay: 40;
+  --z-base: 1;
+}

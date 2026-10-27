@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Invitation | Ayush & Megha</title>
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- GSAP & ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+  <!-- Interactive Royal 3D Envelope Loading Screen -->
+  <div id="loader" class="envelope-loader-screen" role="dialog" aria-modal="true" aria-label="Wedding Invitation Envelope">
+    <div class="envelope-wrapper" id="envelope-wrapper">
+      <p class="envelope-cordial-tag">YOU ARE CORDIALLY INVITED</p>
+
+      <div class="envelope-stage" id="envelope-stage" title="Click to open your wedding invitation">
+        <!-- Envelope Back Face -->
+        <div class="envelope-real-back"></div>
+
+        <!-- The Letter Inside -->
+        <div class="envelope-letter" id="envelope-letter">
+          <div class="letter-border">
+            <span class="letter-top-tag">YOU ARE CORDIALLY INVITED</span>
+            <h3 class="letter-names font-script" id="letter-couple-names">Ayush & Megha</h3>
+            <div class="letter-mini-divider">
+              <img src="assets/images/floral divider.webp" alt="" class="letter-divider-img" aria-hidden="true">
+            </div>
+          </div>
+        </div>
+
+        <!-- Envelope Bottom Pocket -->
+        <img src="assets/images/bottom (1).png" alt="Envelope Pocket" class="envelope-real-bottom" aria-hidden="true">
+
+        <!-- Envelope Top Flap with Wax Seal -->
+        <div class="envelope-real-flap-wrapper" id="envelope-flap">
+          <img src="assets/images/flap (1).png" alt="Envelope Flap" class="envelope-real-flap" aria-hidden="true">
+          <span class="seal-initials-overlay" id="seal-initials">R & A</span>
+        </div>
+      </div>
+
+      <!-- Tap Prompt -->
+      <div class="envelope-prompt" id="envelope-prompt">
+        <span class="prompt-icon">✉️</span>
+        <p class="prompt-text">TAP TO OPEN INVITATION</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content Wrapper -->
+  <main id="app" class="site-main">
+    <!-- Dynamic Falling Petals Layer -->
+    <div id="falling-petals-container" class="falling-petals-container" aria-hidden="true"></div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <img src="assets/images/garland.webp" alt="" class="hero-decor decor-garland-left" aria-hidden="true">
+      <img src="assets/images/garland.webp" alt="" class="hero-decor decor-garland-right" aria-hidden="true">
+
+      <div class="hero-illustration-wrapper">
+        <img src="assets/images/illustration mobile.webp" alt="Couple Illustration" class="hero-illustration">
+      </div>
+
+      <div class="hero-content container">
+        <p class="hero-tagline tagline-top" id="hero-tagline-top">TOGETHER WITH THEIR FAMILIES</p>
+        <h1 class="hero-names">
+          <span class="name-part name-groom" id="hero-groom">Ayush</span>
+          <span class="name-and">and</span>
+          <span class="name-part name-bride" id="hero-bride">Megha</span>
+        </h1>
+        <p class="hero-tagline tagline-bottom" id="hero-tagline-bottom">JOYFULLY INVITE YOU TO<br>CELEBRATE THEIR WEDDING</p>
+      </div>
+
+      <span class="wedding-petal rose petal-md" style="top: 14%; left: 8%; transform: rotate(25deg);" aria-hidden="true"></span>
+      <span class="wedding-petal marigold petal-sm" style="top: 22%; right: 9%; transform: rotate(-35deg);" aria-hidden="true"></span>
+      <span class="wedding-petal rose petal-sm" style="bottom: 18%; left: 12%; transform: rotate(50deg);" aria-hidden="true"></span>
+      <span class="wedding-petal marigold petal-md" style="bottom: 24%; right: 11%; transform: rotate(-20deg);" aria-hidden="true"></span>
+
+      <img src="assets/images/sprig.webp" alt="" class="hero-decor decor-sprig-mid-left" aria-hidden="true">
+      <img src="assets/images/sprig.webp" alt="" class="hero-decor decor-sprig-mid-right" aria-hidden="true">
+      <img src="assets/images/banana leaves.webp" alt="" class="hero-decor decor-leaf-left" aria-hidden="true">
+      <img src="assets/images/banana leaves.webp" alt="" class="hero-decor decor-leaf-right" aria-hidden="true">
+    </section>
+
+    <!-- Scratch to Reveal Date Section -->
+    <section id="scratch-section" class="scratch-section">
+      <span class="wedding-petal rose petal-md" style="top: 12%; left: 7%; transform: rotate(40deg);" aria-hidden="true"></span>
+      <span class="wedding-petal marigold petal-lg" style="top: 15%; right: 7%; transform: rotate(-45deg);" aria-hidden="true"></span>
+      <span class="wedding-petal rose petal-sm" style="bottom: 15%; left: 9%; transform: rotate(15deg);" aria-hidden="true"></span>
+      <span class="wedding-petal marigold petal-sm" style="bottom: 18%; right: 8%; transform: rotate(-30deg);" aria-hidden="true"></span>
+
+      <div class="container scratch-container">
+        <div class="scratch-card" id="scratch-card">
+          <img src="assets/images/border corner.webp" alt="" class="card-corner-border corner-border-tl" aria-hidden="true">
+          <img src="assets/images/border corner.webp" alt="" class="card-corner-border corner-border-tr" aria-hidden="true">
+          <img src="assets/images/border corner.webp" alt="" class="card-corner-border corner-border-bl" aria-hidden="true">
+          <img src="assets/images/border corner.webp" alt="" class="card-corner-border corner-border-br" aria-hidden="true">
+
+          <div class="scratch-header">
+            <span class="scratch-decor-icon">🌿</span>
+            <h2 class="scratch-title">SCRATCH TO REVEAL</h2>
+            <span class="scratch-decor-icon flip">🌿</span>
+          </div>
+
+          <div class="scratch-stage" id="scratch-stage">
+            <div class="scratch-date-underlay">
+              <span class="scratch-revealed-date" id="scratch-date-text">25.12.2026</span>
+            </div>
+            <canvas id="scratch-canvas" class="scratch-canvas"></canvas>
+          </div>
+
+          <div class="scratch-footer">
+            <p class="scratch-subtitle">WEDDING DATE</p>
+          </div>
+
+          <div class="wax-seal" id="wax-seal" title="Sealed with love">
+            <div class="wax-seal-inner">
+              <svg class="wax-seal-heart" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section id="countdown-section" class="countdown-section">
+      <span class="wedding-petal marigold petal-md" style="top: 10%; left: 6%; transform: rotate(30deg);" aria-hidden="true"></span>
+      <span class="wedding-petal rose petal-sm" style="top: 12%; right: 7%; transform: rotate(-50deg);" aria-hidden="true"></span>
+      <span class="wedding-petal rose petal-lg" style="bottom: 12%; left: 8%; transform: rotate(20deg);" aria-hidden="true"></span>
+      <span class="wedding-petal marigold petal-sm" style="bottom: 10%; right: 6%; transform: rotate(-25deg);" aria-hidden="true"></span>
+
+      <img src="assets/images/banana leaves.webp" alt="" class="countdown-side-leaf leaf-left" aria-hidden="true">
+      <img src="assets/images/banana leaves.webp" alt="" class="countdown-side-leaf leaf-right" aria-hidden="true">
+
+      <div class="container countdown-container">
+        <div class="countdown-header">
+          <h2 class="countdown-heading">COUNTDOWN TO OUR BIG DAY</h2>
+          <div class="countdown-divider">
+            <img src="assets/images/floral divider.webp" alt="" class="countdown-floral-divider" aria-hidden="true">
+          </div>
+        </div>
+
+        <div class="countdown-grid" id="countdown-grid">
+          <div class="countdown-card">
+            <img src="assets/images/border corner.webp" alt="" class="card-corner-border corner-border-tl" aria-hidden="true">
+            <img src="assets/images/border corner.webp" alt="" class="card-corner-border corner-border-tr" aria-hidden="true">
+            <img src="assets/images/border corner.webp" alt="" class="card-corner-border corner-border-bl" aria-hidden="true">
+            <img src="assets/images/border corner.webp" alt="" class="card-corner-border corner-border-br" aria-hidden="true">
+            <div class="countdown-card-inner">
+              <span class="countdown-number" id="countdown-days">00</span>
+              <span class="countdown-label">DAYS</span>
+            </div>
+          </div>
+
+          <div class="countdown-card">
+            <img src="assets/images/border corner.webp" alt="" class="card-corner-border corner-border-tl" aria-hidden="true">
+            <img src="assets/images/border corner.webp" alt="" class="card-corner-border corner-border-tr" aria-hidden="true">
+            <img src="assets/images/border corner.webp" alt="" class="card-corner-border corner-border-bl" aria-hidden="true">
+            <img src="assets/images/border corner.webp" alt="" class="card-corner-border corner-border-br" aria-hidden="true">
+            <div class="countdown-card-inner">
+              <span class="countdown-number" id="countdown-hours">00</span>
+              <span class="countdown-label">HOURS</span>
+            </div>
+          </div>
+
+          <div class="countdown-card">
+            <img src="assets/images/border corner.webp" alt="" class="card-corner-border corner-border-tl" aria-hidden="true">
+            <img src="assets/images/border corner.webp" alt="" class="card-corner-border corner-border-tr" aria-hidden="true">
+            <img src="assets/images/border corner.webp" alt="" class="card-corner-border corner-border-bl" aria-hidden="true">
+            <img src="assets/images/border corner.webp" alt="" class="card-corner-border corner-border-br" aria-hidden="true">
+            <div class="countdown-card-inner">
+              <span class="countdown-number" id="countdown-minutes">00</span>
+              <span class="countdown-label">MINUTES</span>
+            </div>
+          </div>
+
+          <div class="countdown-card">
+            <img src="assets/images/border corner.webp" alt="" class="card-corner-border corner-border-tl" aria-hidden="true">
+            <img src="assets/images/border corner.webp" alt="" class="card-corner-border corner-border-tr" aria-hidden="true">
+            <img src="assets/images/border corner.webp" alt="" class="card-corner-border corner-border-bl" aria-hidden="true">
+            <img src="assets/images/border corner.webp" alt="" class="card-corner-border corner-border-br" aria-hidden="true">
+            <div class="countdown-card-inner">
+              <span class="countdown-number" id="countdown-seconds">00</span>
+              <span class="countdown-label">SECONDS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Events Section -->
+    <section id="events-section" class="events-section">
+      <span class="wedding-petal rose petal-md" style="top: 5%; left: 5%; transform: rotate(45deg);" aria-hidden="true"></span>
+      <span class="wedding-petal marigold petal-sm" style="top: 7%; right: 6%; transform: rotate(-35deg);" aria-hidden="true"></span>
+      <span class="wedding-petal marigold petal-lg" style="top: 48%; left: 4%; transform: rotate(15deg);" aria-hidden="true"></span>
+      <span class="wedding-petal rose petal-sm" style="top: 52%; right: 5%; transform: rotate(-40deg);" aria-hidden="true"></span>
+      <span class="wedding-petal rose petal-md" style="bottom: 6%; left: 6%; transform: rotate(30deg);" aria-hidden="true"></span>
+      <span class="wedding-petal marigold petal-sm" style="bottom: 5%; right: 6%; transform: rotate(-20deg);" aria-hidden="true"></span>
+
+      <img src="assets/images/sprig.webp" alt="" class="events-decor-sprig sprig-left" aria-hidden="true">
+      <img src="assets/images/sprig.webp" alt="" class="events-decor-sprig sprig-right" aria-hidden="true">
+      <img src="assets/images/banana leaves.webp" alt="" class="events-decor-leaf leaf-left" aria-hidden="true">
+      <img src="assets/images/banana leaves.webp" alt="" class="events-decor-leaf leaf-right" aria-hidden="true">
+
+      <div class="container events-container">
+        <div class="section-title-wrapper">
+          <h2 class="section-title">OUR EVENTS</h2>
+          <div class="section-divider">
+            <img src="assets/images/floral divider.webp" alt="" class="floral-divider-img" aria-hidden="true">
+          </div>
+        </div>
+
+        <div class="events-grid" id="events-grid">
+          <!-- 1. Phaladan -->
+          <div class="event-card" id="card-phaladan">
+            <img src="assets/images/border corner.webp" alt="" class="card-corner-border corner-border-tl" aria-hidden="true">
+            <img src="assets/images/border corner.webp" alt="" class="card-corner-border corner-border-tr" aria-hidden="true">
+            <img src="assets/images/border corner.webp" alt="" class="card-corner-border corner-border-bl" aria-hidden="true">
+            <img src="assets/images/border corner.webp" alt="" class="card-corner-border corner-border-br" aria-hidden="true">
+            <div class="event-icon-box">
+              <img src="assets/images/phaladan.png" alt="Phaladan" class="event-icon-img">
+            </div>
+            <h3 class="event-name">TILAK & PHALADAN</h3>
+            <p class="event-date">Monday, 30 November 2026</p>
+            <p class="event-time">06:00 PM Onwards</p>
+            <div class="event-mini-divider">
+              <img src="assets/images/floral divider.webp" alt="" class="event-divider-img" aria-hidden="true">
+            </div>
+          </div>
+
+          <!-- 2. Wedding Ceremony -->
+          <div class="event-card" id="card-wedding">
+            <img src="assets/images/border corner.webp" alt="" class="card-corner-border corner-border-tl" aria-hidden="true">
+            <img src="assets/images/border corner.webp" alt="" class="card-corner-border corner-border-tr" aria-hidden="true">
+            <img src="assets/images/border corner.webp" alt="" class="card-corner-border corner-border-bl" aria-hidden="true">
+            <img src="assets/images/border corner.webp" alt="" class="card-corner-border corner-border-br" aria-hidden="true">
+            <div class="event-icon-box">
+              <img src="assets/images/wedding.webp" alt="Wedding Ceremony" class="event-icon-img">
+            </div>
+            <h3 class="event-name">WEDDING CEREMONY</h3>
+            <p class="event-date">Friday, 04 December 2026</p>
+            <p class="event-time">09:00 PM Onwards</p>
+            <div class="event-mini-divider">
+              <img src="assets/images/floral divider.webp" alt="" class="event-divider-img" aria-hidden="true">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location-section" class="location-section">
+      <span class="wedding-petal rose petal-md" style="top: 8%; left: 5%; transform: rotate(20deg);" aria-hidden="true"></span>
+      <span class="wedding-petal marigold petal-sm" style="top: 10%; right: 6%; transform: rotate(-40deg);" aria-hidden="true"></span>
+      <span class="wedding-petal marigold petal-lg" style="bottom: 12%; left: 7%; transform: rotate(35deg);" aria-hidden="true"></span>
+      <span class="wedding-petal rose petal-sm" style="bottom: 8%; right: 5%; transform: rotate(-15deg);" aria-hidden="true"></span>
+
+      <div class="container location-container">
+        <div class="section-title-wrapper">
+          <h2 class="section-title">LOCATION</h2>
+          <div class="section-divider">
+            <img src="assets/images/floral divider.webp" alt="" class="floral-divider-img" aria-hidden="true">
+          </div>
+        </div>
+
+        <div class="location-layout">
+          <a href="https://maps.google.com/?q=Oberoi+Udaivilas+Udaipur" target="_blank" rel="noopener noreferrer" class="location-map-card" id="location-map-link" title="Open in Google Maps">
+            <img src="assets/images/border corner.webp" alt="" class="card-corner-border corner-border-tl" aria-hidden="true">
+            <img src="assets/images/border corner.webp" alt="" class="card-corner-border corner-border-tr" aria-hidden="true">
+            <img src="assets/images/border corner.webp" alt="" class="card-corner-border corner-border-bl" aria-hidden="true">
+            <img src="assets/images/border corner.webp" alt="" class="card-corner-border corner-border-br" aria-hidden="true">
+            <div class="map-inner-frame">
+              <img src="assets/icons/map.svg" alt="Venue Map" class="map-illustration-img">
+              <div class="map-overlay-badge">
+                <span>📍 View on Google Maps</span>
+              </div>
+            </div>
+          </a>
+
+          <div class="location-info">
+            <h3 class="venue-name" id="venue-name">CHANDA PALACE</h3>
+            <p class="venue-address" id="venue-address">Near Oberoi Udaivilas,<br>Udaipur, Rajasthan, India</p>
+
+            <div class="venue-inline-divider">
+              <span class="divider-dot"></span>
+              <span class="divider-line"></span>
+              <span class="divider-diamond">✦</span>
+              <span class="divider-line"></span>
+              <span class="divider-dot"></span>
+            </div>
+
+            <p class="venue-quote" id="venue-quote">A beautiful destination,<br>surrounded by love, laughter<br>and happy memories.</p>
+            <div class="venue-bottom-divider">
+              <img src="assets/images/floral divider.webp" alt="" class="floral-divider-img" aria-hidden="true">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing Sign-off Section (Replaces RSVP) -->
+    <footer id="closing-section" class="closing-section">
+      <span class="wedding-petal rose petal-md" style="top: 15%; left: 8%; transform: rotate(35deg);" aria-hidden="true"></span>
+      <span class="wedding-petal marigold petal-sm" style="top: 18%; right: 9%; transform: rotate(-45deg);" aria-hidden="true"></span>
+      <span class="wedding-petal marigold petal-lg" style="bottom: 15%; right: 7%; transform: rotate(20deg);" aria-hidden="true"></span>
+      <span class="wedding-petal rose petal-sm" style="bottom: 12%; left: 7%; transform: rotate(-25deg);" aria-hidden="true"></span>
+
+      <img src="assets/images/sprig.webp" alt="" class="closing-sprig sprig-left" aria-hidden="true">
+      <img src="assets/images/sprig.webp" alt="" class="closing-sprig sprig-right" aria-hidden="true">
+      <img src="assets/images/banana leaves.webp" alt="" class="closing-banana-leaf leaf-bottom-left" aria-hidden="true">
+      <img src="assets/images/banana leaves.webp" alt="" class="closing-banana-leaf leaf-bottom-right" aria-hidden="true">
+
+      <div class="container closing-container">
+        <div class="closing-divider">
+          <img src="assets/images/floral divider.webp" alt="" class="floral-divider-img" aria-hidden="true">
+        </div>
+        <p class="closing-tagline">WITH LOVE,</p>
+        <h2 class="closing-names font-script" id="closing-names">Ayush & Megha</h2>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Fixed Audio Control Button -->
+  <button id="music-toggle" class="music-btn paused" aria-label="Toggle Background Music" title="Play / Pause Background Music">
+    <svg class="music-icon icon-playing" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 18V5l12-2v13"></path>
+      <circle cx="6" cy="18" r="3" fill="currentColor"></circle>
+      <circle cx="18" cy="16" r="3" fill="currentColor"></circle>
+    </svg>
+    <svg class="music-icon icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 18V5l12-2v13"></path>
+      <circle cx="6" cy="18" r="3"></circle>
+      <circle cx="18" cy="16" r="3"></circle>
+      <line x1="1" y1="1" x2="23" y2="23" stroke-width="2.2"></line>
+    </svg>
+  </button>
+
+  <!-- YouTube Audio Player -->
+  <iframe id="yt-player" class="yt-audio-player" 
+    src="https://www.youtube.com/embed/rW4axKNu2Xw?enablejsapi=1&autoplay=1&loop=1&playlist=rW4axKNu2Xw&controls=0&playsinline=1" 
+    allow="autoplay; encrypted-media" 
+    title="Background Music" 
+    tabindex="-1" 
+    aria-hidden="true"></iframe>
+
+  <!-- YouTube IFrame API -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <!-- Main Script -->
+  <script src="js/script.js"></script>
+</body>
+</html>
