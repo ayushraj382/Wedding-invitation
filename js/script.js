@@ -126,10 +126,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (letterNames) letterNames.textContent = `${groomName} & ${brideName}`;
     if (sealInitials) sealInitials.textContent = initials;
 
-    // Populate Closing Names
-    const closingNames = document.getElementById('closing-names');
-    if (closingNames) closingNames.textContent = `${brideName} & ${groomName}`;
-
     // Music Toggle Listener
     const musicBtn = document.getElementById('music-toggle');
     if (musicBtn) {

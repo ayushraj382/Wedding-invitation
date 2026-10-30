@@ -1395,6 +1395,51 @@ body {
   margin: 0;
 }
 
+.closing-host-name {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 4.2vw, 2.0rem);
+  font-weight: var(--fw-semibold);
+  letter-spacing: clamp(2px, 0.5vw, 4px);
+  text-transform: uppercase;
+  color: var(--color-primary);
+  line-height: 1.2;
+  margin: 6px 0 16px 0;
+}
+
+.closing-address-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 22px;
+  background-color: rgba(243, 235, 221, 0.9);
+  background-image: var(--bg-texture-paper);
+  border: 1px solid var(--color-gold-line);
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-size: clamp(13px, 1.6vw, 15px);
+  font-weight: var(--fw-semibold);
+  color: var(--color-warm-brown);
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(41, 37, 31, 0.08);
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+  max-width: 90%;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.closing-address-link:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-marigold-deep);
+  box-shadow: 0 6px 18px rgba(184, 138, 50, 0.22);
+  color: var(--color-primary);
+}
+
+.closing-map-icon {
+  flex-shrink: 0;
+  color: var(--color-wedding-red);
+}
+
 /* ==========================================================================
    DESKTOP OPTIMIZATIONS (min-width: 1024px)
    ========================================================================== */
